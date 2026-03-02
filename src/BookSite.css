@@ -1,0 +1,43 @@
+.BookFind{
+  width: auto;
+  
+}
+.ImgBookFind{
+    position: absolute;
+    width: 15vw;
+    z-index: 3;
+}
+.text{
+    margin-left: 30%;
+}
+header{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}
+.Logotip{
+    width: 5%;
+    height: auto;
+    border-radius: 100px;
+}
+.BuyBtn{
+    border-color: rgb(0, 0, 0);
+    border-color: none;
+    /* padding: 0.5%; */
+    border-radius: 30px;
+    font-size: 20px;
+    height: 40px;
+}
+.PriceBuy{
+    display: flex;
+}
+.PriceBook{
+    margin-top: 0;
+    margin-left: 1%;
+}
+.RemoveBook{
+    position: absolute;
+    float: right;
+    z-index: 10;
+}

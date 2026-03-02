@@ -1,0 +1,60 @@
+body{
+  max-width: 100vw;
+  max-height: 100%;
+}
+.BookCard{
+    margin-top: 5%;
+    gap: 2%;
+    background-color: aliceblue;
+    border-radius: 30px;
+    max-width: 170px;
+}
+.Book{
+  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.ImgBook{
+    width: 170px;
+    height: 250px;
+    border-radius: 20px;
+}
+a{
+  text-decoration: none;
+  color: #000000;
+  word-wrap: break-word
+}
+.header{
+  margin-top: 0;
+}
+.iconCard{
+  background-color: #036280;
+  border-radius: 10px;
+  width: 80px;
+}
+.WhyUS{
+  display: flex;
+  gap: 60px;
+  background-color: #e4f2ff;
+  padding: 3%;
+  border-radius: 25px;
+  flex-wrap: wrap;
+}
+.FeatureCard{
+  display: flex;
+}
+.TextWhyUs{
+  font-size: 28px;
+  color: #012E4A;
+}
+.textgup{
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+.titleWhyUs{
+  color:#4F536C;
+  margin-top: 6%;
+}
