@@ -17,10 +17,10 @@ const Catalog = () => {
         <>
         <Header/>
         <WhyChooseUs/>
-        <input type="text" placeholder='Название книги' className='searchInp' onChange={SearchInp}/>
-        <h1>Книги</h1>
+        <input type="text" placeholder='Найти товары' className='searchInp' onChange={SearchInp}/>
+        <h1>Лучшие Книги</h1>
         <div className="Book">
-        <Constructor catalog ={SearchCatalog}/> {/* Рендерит Книги */}
+        <Constructor catalog ={SearchCatalog} count="4"/> {/* Рендерит Книги */}
         </div>
         <Routes>   {/* Дает возможность делать ссылки */}
             <Route path ="/BookSite/:id" element={<BookSite/>}/> </Routes> {/* Делаю ссылку на Сайт для отдельной книги */}

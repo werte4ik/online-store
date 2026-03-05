@@ -4,10 +4,10 @@ const WhyChooseUs = () =>{
 return(
     <>
     <div className="WhyUS">
-    <FeatureCards image = "icon-1.svg" description = "Return & refund" title = "Money back guarantee"/>
-    <FeatureCards image = "icon-2.svg" description = "Secure Payment" title = "30% off by subscribing"/>
-    <FeatureCards image = "icon-3.svg" description = "Quality Support" title = "Always online 24/7"/>
-    <FeatureCards image = "icon-4.svg" description = "Daily Offers" title = "20% off by subscribing"/>
+    <FeatureCards image = "icon-1.svg" description = "Возврат и возмещение денежных средств" title = "Гарантия возврата денег"/>
+    <FeatureCards image = "icon-2.svg" description = "Безопасный платеж" title = "Скидка 30 % при подписке"/>
+    <FeatureCards image = "icon-3.svg" description = "Качественная поддержка" title = "Всегда онлайн 24/7"/>
+    <FeatureCards image = "icon-4.svg" description = "Ежедневные предложения" title = "Скидка 20 % при подписке"/>
     </div>
     </>
 )
