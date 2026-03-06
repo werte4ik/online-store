@@ -17,7 +17,7 @@ const Catalog = () => {
         <>
         <Header/>
         <WhyChooseUs/>
-        <input type="text" placeholder='Найти товары' className='searchInp' onChange={SearchInp}/>
+        <input type="search" placeholder='Найти товары' className='searchInp' onInput={SearchInp}/>
         <h1>Лучшие Книги</h1>
         <div className="Book">
         <Constructor catalog ={SearchCatalog} count="4"/> {/* Рендерит Книги */}

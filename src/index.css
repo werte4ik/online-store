@@ -7,16 +7,14 @@
 .BookCard{
     margin-top: 5%;
     gap: 2%;
-    background-color: aliceblue;
+    /* background-color: rgb(255, 242, 242); */
     border-radius: 30px;
-    width: fit-content 
 }
 .Book{
   gap: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  text-align: center;
 }
 .ImgBook{
     width: 170px;
@@ -82,9 +80,37 @@ margin-left: 1%;
   opacity: 1;
 }
 .BackImage{
-  background-color: rgb(233, 233, 233);
-    padding: 20% 70%; 
+  background-color: #F5F5F5;
+    padding: 40px 50px; 
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 20px;
   }
+.CenterButton{
+  display: flex;
+  justify-content: center;
+}
+.BuyBtn{
+  padding: 1% 2%;
+  background-color: #d0e1e7;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  border: none;
+}
+.BuyBtn:hover{
+  background-color: rgb(182, 197, 211);
+}
+.NameBook{
+  color: #012e4a ;
+  
+}
+.Company{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.CompName{
+  margin-left: 4%;
+
+}

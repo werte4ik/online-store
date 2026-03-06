@@ -6,10 +6,7 @@ const BuyBooks = () =>{
     const BookCatalog = JSON.parse(localStorage.getItem('BuyBook'))
     const [booksRow,SetBooks] = useState(() =>{
         const BookCatalog = JSON.parse(localStorage.getItem('BuyBook'))
-        if (BookCatalog == []){
-           return "Ничего не найдено"
-        }
-        else return  BookCatalog 
+        return  BookCatalog || []
     })
     console.log(BookCatalog)
     const RemoveBuy = (BookId) =>{
@@ -23,7 +20,7 @@ const BuyBooks = () =>{
         <>
         <Header/>
         <div className="Book">
-        <Constructor catalog ={Render} None = "none" remove = {(Book) => <p className = "RemoveBook" onClick={(e) =>{ e.preventDefault();RemoveBuy(Book.id)}} >×</p>}/>
+        <Constructor count="100" catalog ={Render} None = "none" remove = {(Book) => <p className = "RemoveBook" onClick={(e) =>{ e.preventDefault();RemoveBuy(Book.id)}} >×</p>}/>
         </div>
         </>
     )
