@@ -97,6 +97,7 @@ margin-left: 1%;
   cursor: pointer;
   transition: background-color 0.5s ease;
   border: none;
+ color: #012E4A;
 }
 .BuyBtn:hover{
   background-color: rgb(182, 197, 211);

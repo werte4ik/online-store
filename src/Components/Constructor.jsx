@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 const Constructor = (props) => {
         const Bookcount = parseInt(props.count)
-
         const Buy = (BookId) =>{
         const IdBooks = JSON.parse(localStorage.getItem('BuyBook')) || []
         const NewMassiv = [...IdBooks, BookId ]
@@ -16,7 +15,6 @@ const Constructor = (props) => {
         
         const Start = elements.map((Book) => <Link to={`/BookSite/${Book.id}` /* Динамичная ссылка */} key={Book.id}>
         <div className="BookCard">
-        {typeof RemoveCard === 'function' ? <div className="Right"> {RemoveCard(Book)}</div> : null}
         <div className="BackImage"> <img src={Book.image} alt="" className="ImgBook"/></div>
         <div className="TextCard">
         <h3 className="NameBook">{Book.name}</h3>
@@ -26,7 +24,7 @@ const Constructor = (props) => {
         <img src="../../Image/Icon/client-4.png" alt="" /><span className="CompName">Company name</span>
         </div>
         <div className="CenterButton">
-        {None !== "none" ? (<button className="BuyBtn" onClick={(e) =>{ e.preventDefault();Buy(Book.id)}}><i className="fa-solid fa fa-shopping-basket" aria-hidden="true"></i> Добавить в корзину</button>) : ""}
+        <button className="BuyBtn" onClick={(e) =>{ e.preventDefault();Buy(Book.id)}}><i className="fa-solid fa fa-shopping-basket" aria-hidden="true"></i> Добавить в корзину</button>
         </div>
         </div>
         </div>
