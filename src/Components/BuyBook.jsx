@@ -17,27 +17,23 @@ const BuyBooks = () =>{
  
     }
     const Render = Books.filter((Book) => booksRow.includes(Book.id))
-    const TotalPrice = () => {
-        const TotalBook = Render.map((Book) => parseInt(Book.price))
-        const sum = TotalBook.reduce(function (currentSum,currentNumber) {
-            return currentSum + currentNumber
-        },0)
-        SetPrice(sum)
-        console.log(TotalBook)
-    }
-    useEffect(() =>{
-        TotalPrice()
-    }, [booksRow])
+    function sum_reducer(Book, CurrentBook) { 
+        Book[CurrentBook] =  (Book[CurrentBook] || 0) + 1;
+        return Book
+     }
+    const CounrtBOOk = booksRow.reduce(sum_reducer,{})
+    console.log(CounrtBOOk)
+    console.log(booksRow)
+    
     return(
         <>
         <Header/>
         <h1>Товары</h1>
-        <div className="Book">
-        <BuyBookConstructor catalog ={Render} remove = {(Book) => <p className = "RemoveBook" onClick={(e) =>{ e.preventDefault();RemoveBuy(Book.id)}} >×</p>}/>
-        </div>
-        <div className="TotalPrice">
+        
+        <BuyBookConstructor catalog ={Render} count = {CounrtBOOk} PriceObject = {booksRow} remove = {(Book) => <p className = "RemoveBook" onClick={(e) =>{ e.preventDefault();RemoveBuy(Book.id)}} >×</p>}/>
+        {/* <div className="TotalPrice">
         <p>{price} ₽</p>
-        </div>
+        </div> */}
         </>
     )
 }

@@ -1,24 +1,31 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import Books from "./BooksName"
 const BuyBookConstructor = (props) => {
+        const [price,SetPrice] = useState(0)
         const Catalog = props.catalog
         const RemoveCard = props.remove
+        const count = props.count
+        const PriceObject = props.PriceObject
+        
+         useEffect(() =>{
+         const TotalSum = Catalog.reduce((sum, Book) => {
+                const BookCount = count[Book.id]
+                const TotalBook = parseInt(Book.price)
+                return sum + (BookCount * TotalBook)
+            },0)
+        SetPrice(TotalSum)
+    }, [PriceObject,count])
+        
+        
+        const Start = () => {
+            
+            if (Catalog.length == 0){
+                return <p>Нет товаров</p>
+            }
+            return (Catalog.map((Book) =>{
+            const BookCount = count[Book.id]
 
-        // const [count,SetCount] = useState(1)
-        // const TotalCount = (e) => {
-        //     const NewCount = parseInt(e.target.value) 
-        //     SetCount(NewCount)
-        // }
-        //     useEffect(() =>{
-        //         TotalCount() 
-        //     }, [count])
-        // const BookCount = Catalog.reduce(function (currentBook, BookCount) {
-        //     currentBook[BookCount.id] = (currentBook[BookCount.id] || 0) + 1
-        //     return currentBook
-        // }, {})
-        // console.log(BookCount)
-        const Start = Catalog.map((Book) =>{
-             
         return(
         <Link to={`/BookSite/${Book.id}` /* Динамичная ссылка */} key={Book.id}>
         <div className="BookCard">
@@ -30,14 +37,19 @@ const BuyBookConstructor = (props) => {
                 <h3>{Book.price} ₽</h3>
                     <div className="Company">
                     <img src="../../Image/Icon/client-4.png" alt="" /><span className="CompName">Company name</span>
-                    {/* <input type="number" className="Count" id="" min={0} value={count} onChange={(e)=>TotalCount( e.target.value)} onClick={(e) => e.preventDefault()}/> */}
+                    <input type="number" className="Count" id="" min={0} value={BookCount}  onClick={(e) => e.preventDefault()}/>
                     </div>
             </div>
         </div>
-        </Link>)}) /* Собираю книгу в карточку */
+        </Link>)}))} /* Собираю книгу в карточку */
     return(
         <>
-        {Start}
+        <div className="Book">
+        <Start />
+        </div>
+        <div className="TotalPrice">
+            <p>{price} рублей</p>
+        </div>
         </>
     )
 }
