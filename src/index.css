@@ -7,7 +7,6 @@
 .BookCard{
     margin-top: 5%;
     gap: 2%;
-    /* background-color: rgb(255, 242, 242); */
     border-radius: 30px;
 }
 .Book{
@@ -61,20 +60,20 @@ margin-left: 1%;
 }
 .RemoveBook{
   background-color: white;
-  font-size: 20px;
-  width: 20px;
-  height: 20px;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  
+  color: grey;
+  border-color: grey;
 }
 .Right{
   display: flex;
-  opacity: 0;
-  justify-content: right;
-  margin-right: 4%;
+  justify-content: center;
+  align-items: center;
 }
 .BookCard:hover .Right{
   opacity: 1;
@@ -114,4 +113,46 @@ margin-left: 1%;
 .CompName{
   margin-left: 4%;
 
+}
+.BasketImage{
+  width: 62px;
+  height: 78px;
+}
+.BasketBookCard{
+display: grid;
+grid-template-columns:80px 200px 200px 200px 200px 200px 50px;
+align-items: center;
+}
+.BasketTextCard{
+  display: flex;
+  
+}
+.BookBasket{
+  display: flex;
+  flex-direction: column;
+}
+.Count{
+  height: 50%;
+}
+.CategoryText{
+  cursor: pointer;
+  margin-bottom: 0;
+}
+.DropDownText{
+  position: absolute;
+  display: none;
+}
+.CategoryText:hover .DropDownText{
+  display: block;
+}
+.fa-backward{
+  position: relative;
+  font-size: 30px;
+
+}
+.NoBtn{
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  outline: none;
+  cursor: pointer;
 }

@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom"
 const Constructor = (props) => {
         const Bookcount = parseInt(props.count)
-        const Buy = (BookId) =>{
-        const IdBooks = JSON.parse(localStorage.getItem('BuyBook')) || []
-        const NewMassiv = [...IdBooks, BookId ]
-        localStorage.setItem('BuyBook', JSON.stringify(NewMassiv))
-        }
         
-        const None = props.None
+        const Buy = (BookId) =>{
+            const IdBooks = JSON.parse(localStorage.getItem('BuyBook')) || []
+            const NewMassiv = [...IdBooks, BookId ]
+            const count = JSON.parse(localStorage.getItem('BookCounts'))
+            localStorage.setItem('BuyBook', JSON.stringify(NewMassiv))
+            const newValue = {...count, [BookId]: 1}
+            localStorage.setItem('BookCounts', JSON.stringify(newValue))
+        }
+
         const Catalog = props.catalog
-        const elements = Catalog.slice(0,Bookcount)
-        const RemoveCard = props.remove
+        const elements = Catalog.slice(0,Bookcount || 100)
         
         
         const Start = elements.map((Book) => <Link to={`/BookSite/${Book.id}` /* Динамичная ссылка */} key={Book.id}>

@@ -22,6 +22,7 @@ const Catalog = () => {
         <div className="Book">
         <Constructor catalog ={SearchCatalog} count="4"/> {/* Рендерит Книги */}
         </div>
+        
         <Routes>   {/* Дает возможность делать ссылки */}
             <Route path ="/BookSite/:id" element={<BookSite/>}/> </Routes> {/* Делаю ссылку на Сайт для отдельной книги */}
         </>
