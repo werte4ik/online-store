@@ -30,7 +30,7 @@ const Header = () => {
             </div>
         
         </div>
-        <input type="search" placeholder='Найти товары' className='searchInp' onInput={SearchInp}/>
+        {/* <input type="search" placeholder='Найти товары' className='searchInp' onInput={SearchInp}/> */}
         <p>Заказы</p>
         <p>Пользователь</p>
         <Link to="/BuyBooks"><p>Корзина</p></Link>

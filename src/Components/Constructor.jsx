@@ -7,7 +7,7 @@ const Constructor = (props) => {
             const NewMassiv = [...IdBooks, BookId ]
             const count = JSON.parse(localStorage.getItem('BookCounts'))
             localStorage.setItem('BuyBook', JSON.stringify(NewMassiv))
-            const newValue = {...count, [BookId]: 1}
+            const newValue = {...count, [BookId]: (count[BookId]||0)+1}
             localStorage.setItem('BookCounts', JSON.stringify(newValue))
         }
 
@@ -21,7 +21,7 @@ const Constructor = (props) => {
         <div className="TextCard">
         <h3 className="NameBook">{Book.name}</h3>
         <h4 className="AuthorBook">{Book.author}</h4>
-        <h3>{Book.price} ₽</h3>
+        <h3>{Book.price.toLocaleString('ru-RU')} ₽</h3>
         <div className="Company">
         <img src="../../Image/Icon/client-4.png" alt="" /><span className="CompName">Company name</span>
         </div>

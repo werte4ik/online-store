@@ -66,7 +66,7 @@ const BuyBookConstructor = (props) => {
         <Start />
         </div>
         <div className="TotalPrice">
-            <p>{price} рублей</p>
+            <p>{price.toLocaleString('ru-RU')} рублей</p>
         </div>
         </>
     )

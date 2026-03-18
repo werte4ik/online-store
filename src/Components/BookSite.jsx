@@ -33,7 +33,7 @@ const Find = Books.find((Book) => Book.id === parseInt(Id)) ||Cars.find((Book) =
         <h3>Описание</h3>
         <p>{Find.description}</p>
         <div className="PriceBuy">
-        <button className="BuyBtn" onClick={() =>Buy(Find.id)}>Купить</button><h1 className="PriceBook">{Find.price} Рублей</h1>
+        <button className="BuyBtn" onClick={() =>Buy(Find.id)}>Купить</button><h1 className="PriceBook">{Find.price.toLocaleString('ru-RU')} Рублей</h1>
         </div>
         </div>
 
