@@ -6,10 +6,17 @@ const Category = () =>{
     const location = useLocation();
     const categoryBooks = location.state?.categoryBooks;
     const TypeProduct = location.state?.TypeBook;
-    const Render = categoryBooks.filter((Product) => Product.type == TypeProduct)
+    console.log(TypeProduct)
+    console.log(categoryBooks)
+    const Render = categoryBooks.filter((Product) => Product.Genre.toLowerCase().includes(TypeProduct.toLowerCase()))
+    console.log(Render)
+    const RenLth = Render.length
     return(
         <>
         <Header/>
+        <div>
+            <p>Найдено по вашему запросу: {RenLth}</p>
+        </div>
         <div className="Book">
         <Constructor catalog = {Render}/>
         </div>

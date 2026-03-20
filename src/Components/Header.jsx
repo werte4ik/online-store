@@ -24,8 +24,10 @@ const Header = () => {
         <p className="CategoryText">Категории</p>
             <div className="DropDownText">
                 <ul>
-                    <li onClick={() =>CategoryClick(Books, "Book")}>Книги</li>
-                    <li onClick={() =>CategoryClick(Cars,"Car")}>Машины</li>
+                    <li onClick={() =>CategoryClick(Books, "Роман")}>Роман</li>
+                    <li onClick={() =>CategoryClick(Books, "Поэма")}>Поэма</li>
+                    <li onClick={() =>CategoryClick(Books, "Повесть")}>Повесть</li>
+                    <li onClick={() =>CategoryClick(Books, "Комедия")}>Комедия</li>
                 </ul>
             </div>
         
