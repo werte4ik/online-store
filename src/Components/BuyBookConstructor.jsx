@@ -5,14 +5,16 @@ const BuyBookConstructor = (props) => {
         
         const [price,SetPrice] = useState(0)
         const Catalog = props.catalog
+        const NewMass = props.NewMass
         const RemoveCard = props.remove
         const count = props.count
         const newCount = props.NewCount
         const PriceObject = props.PriceObject
-        console.log(count)
+        // console.log(count)
         const onChangeBook = (event, bookId) => {
             const NewCount = parseInt(event.target.value)
             newCount(bookId, NewCount)
+            
         }
 
          useEffect(() =>{
@@ -55,7 +57,7 @@ const BuyBookConstructor = (props) => {
                     <div className="Company">
                     <img src="../../Image/Icon/client-4.png" alt="" /><span className="CompName">Company name</span>
                     </div>
-                    <input type="number" className="Count" id="" min={0} value={BookCount} onChange={() => onChangeBook(event,Book.id)} onClick={(e) => {e.preventDefault()}}/>
+                    <input type="number" className="Count" id="" min={0} value={BookCount} onChange={() => {onChangeBook(event,Book.id)}} onClick={(e) => {e.preventDefault()}}/>
                     
 
         </div>

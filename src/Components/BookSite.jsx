@@ -5,7 +5,9 @@ import Header from './Header';
 import Cars from "./Cars";
 
 
-const BookSite = () => {
+const BookSite = (props) => {
+    const mass = props.mass
+    const NewMass = props.NewMass
     const navigate = useNavigate()
     const TryToFind = useParams() /* Позволяет работать с динамической ссылкой */
     console.log(TryToFind)

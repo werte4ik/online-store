@@ -4,8 +4,11 @@ import SearchInp from "../Components/Catalog"
 import { useNavigate } from 'react-router-dom';
 import Books from "./BooksName"
 import Cars from "./Cars";
-
-const Header = () => {
+import { useEffect, useState } from "react";
+const Header = (props) => {
+    const [Len,SetLen] = useState(0)
+    const mass = props.mass ? props.mass : 0
+    const NewMass = props.NewMass
        const navigate = useNavigate();
    const CategoryClick = (ProductCategory, Type) => {
     navigate('/category',{
@@ -15,6 +18,13 @@ const Header = () => {
         }
     });
    }
+         useEffect(() => {  
+    const store = mass
+    const count = Object.values(store).reduce((accumulator, value) => { return accumulator + value; }, 0)
+    console.log("Store",count)
+    console.log("store.length",Object.keys(store).length)
+            SetLen(count)
+            },[mass] )
     return(
         <>
         <header>
@@ -35,7 +45,8 @@ const Header = () => {
         {/* <input type="search" placeholder='Найти товары' className='searchInp' onInput={SearchInp}/> */}
         <p>Заказы</p>
         <p>Пользователь</p>
-        <Link to="/BuyBooks"><p>Корзина</p></Link>
+        <div className="Headertxt">
+        <Link to="/BuyBooks"><p>Корзина</p><i className="fa-solid fa fa-shopping-basket" aria-hidden="true"></i>{Len}</Link></div>
         <p></p>
         </header>
         

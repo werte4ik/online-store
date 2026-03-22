@@ -156,3 +156,19 @@ align-items: center;
   outline: none;
   cursor: pointer;
 }
+.Headertxt a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.AddProduct{
+  background-color: #09ff00;
+  display: inline;
+  padding: 2%;
+  border-radius: 30px;
+  position: fixed;
+  z-index: 100;
+}
+.ProductText{
+  display: inline;
+}

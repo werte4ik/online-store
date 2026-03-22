@@ -2,23 +2,34 @@ import Books from "./BooksName";
 import Constructor from "./Constructor"
 import { useLocation } from 'react-router-dom';
 import Header from "./Header";
-const Category = () =>{
+import { useState } from "react";
+const Category = (props) =>{
     const location = useLocation();
     const categoryBooks = location.state?.categoryBooks;
     const TypeProduct = location.state?.TypeBook;
-    console.log(TypeProduct)
-    console.log(categoryBooks)
+    const mass = props.mass
+    const NewMass = props.NewMass
+
     const Render = categoryBooks.filter((Product) => Product.Genre.toLowerCase().includes(TypeProduct.toLowerCase()))
-    console.log(Render)
+
     const RenLth = Render.length
+    const [showNotification, setShowNotification] = useState(false);
+    const message = () => {
+        setShowNotification(true);
+        setTimeout(() => setShowNotification(false), 1000);
+    }
+
     return(
         <>
-        <Header/>
+        <div className='AddProduct' style={{display: showNotification ? 'inline' : 'none'}}>
+            <p className='ProductText'>Товар добавлен</p>
+        </div>
+            <Header mass = {mass} NewMass = {NewMass}/>
         <div>
             <p>Найдено по вашему запросу: {RenLth}</p>
         </div>
         <div className="Book">
-        <Constructor catalog = {Render}/>
+        <Constructor catalog = {Render} onUpdateMass={NewMass} AddProduct = {message} />
         </div>
         
         </>
