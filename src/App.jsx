@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route/>
       <Route path="/" element={<Catalog  NewMass={NewMass} search = {search} SetSearch = {SearchInp}/>} />
-      <Route path="/BookSite/:id" element={<BookSite/>} />
+      <Route path="/BookSite/:id" element={<BookSite NewMass={NewMass}/>} />
       <Route path="/BuyBooks" element={<BuyBooks NewMass={NewMass}/>} />
       <Route path="/Category" element={<Category NewMass={NewMass}/>} />
       </Routes>

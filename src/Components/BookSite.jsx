@@ -4,17 +4,27 @@ import '../BookSite.css'
 import Cars from "./Cars";
 
 
-const BookSite = () => {
+const BookSite = (props) => {
     const navigate = useNavigate()
     const TryToFind = useParams() /* Позволяет работать с динамической ссылкой */
+    const onUpdateMass = props.NewMass
     console.log(TryToFind)
 const Id = TryToFind.id /* Получаю id книги через ссылку */
 const Find = Books.find((Book) => Book.id === parseInt(Id)) ||Cars.find((Book) => Book.id === parseInt(Id))/* Нахожу книгу по айди */
     const IdBooks = JSON.parse(localStorage.getItem('BuyBook')) || []
-    const Buy = (BookId) =>{
-        IdBooks.push(BookId)
-        localStorage.setItem('BuyBook', JSON.stringify(IdBooks)) /* Чтобы потом подтянуть в корзину */
-    }
+        const Buy = (BookId) =>{
+            const IdBooks = JSON.parse(localStorage.getItem('BuyBook')) || []
+            const NewMassiv = [...IdBooks, BookId ]
+            
+            const count = JSON.parse(localStorage.getItem('BookCounts'))
+
+            localStorage.setItem('BuyBook', JSON.stringify(NewMassiv))
+
+            const newValue = {...count, [BookId]: (count[BookId]||0)+1}
+
+            localStorage.setItem('BookCounts', JSON.stringify(newValue))
+            onUpdateMass()
+        }
     const Back = () => {
         navigate(-1)
     }
