@@ -7,7 +7,6 @@ const Category = (props) =>{
     const location = useLocation();
     const categoryBooks = location.state?.categoryBooks;
     const TypeProduct = location.state?.TypeBook;
-    const mass = props.mass
     const NewMass = props.NewMass
 
     const Render = categoryBooks.filter((Product) => Product.Genre.toLowerCase().includes(TypeProduct.toLowerCase()))
@@ -24,7 +23,6 @@ const Category = (props) =>{
         <div className='AddProduct' style={{display: showNotification ? 'inline' : 'none'}}>
             <p className='ProductText'>Товар добавлен</p>
         </div>
-            <Header mass = {mass} NewMass = {NewMass}/>
         <div>
             <p>Найдено по вашему запросу: {RenLth}</p>
         </div>

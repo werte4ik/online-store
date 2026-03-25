@@ -172,3 +172,11 @@ align-items: center;
 .ProductText{
   display: inline;
 }
+.searchInp{
+  width: 20%;
+  border-radius: 20px;
+  border-color: transparent;
+}
+.searchInp:hover{
+  border-color: #000000;
+}

@@ -1,13 +1,10 @@
 import Books from "./BooksName"
 import { useNavigate, useParams } from "react-router-dom"
 import '../BookSite.css'
-import Header from './Header';
 import Cars from "./Cars";
 
 
-const BookSite = (props) => {
-    const mass = props.mass
-    const NewMass = props.NewMass
+const BookSite = () => {
     const navigate = useNavigate()
     const TryToFind = useParams() /* Позволяет работать с динамической ссылкой */
     console.log(TryToFind)
@@ -23,7 +20,6 @@ const Find = Books.find((Book) => Book.id === parseInt(Id)) ||Cars.find((Book) =
     }
     return(
         <>  
-        <Header/>
         <button className="NoBtn" onClick={Back}><i className="fa fa-backward" aria-hidden="true"></i></button>
         <div className="BookFind">
         <img src={`../${Find.image}` /* Ссылка находиться на уровне выше */} alt="" className="ImgBookFind"/>

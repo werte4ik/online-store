@@ -7,8 +7,8 @@ import Cars from "./Cars";
 import { useEffect, useState } from "react";
 const Header = (props) => {
     const [Len,SetLen] = useState(0)
+    const Search = props.Search
     const mass = props.mass ? props.mass : 0
-    const NewMass = props.NewMass
        const navigate = useNavigate();
    const CategoryClick = (ProductCategory, Type) => {
     navigate('/category',{
@@ -42,7 +42,7 @@ const Header = (props) => {
             </div>
         
         </div>
-        {/* <input type="search" placeholder='Найти товары' className='searchInp' onInput={SearchInp}/> */}
+        <input type="search" placeholder='Найти товары' className='searchInp' onInput={Search}/>
         <p>Заказы</p>
         <p>Пользователь</p>
         <div className="Headertxt">

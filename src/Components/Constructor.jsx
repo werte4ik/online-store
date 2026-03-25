@@ -8,7 +8,6 @@ const Constructor = (props) => {
             const NewMassiv = [...IdBooks, BookId ]
             
             const count = JSON.parse(localStorage.getItem('BookCounts'))
-            const EveryBookInBasket = JSON.parse(localStorage.getItem('BookCountsEvery'))
 
             localStorage.setItem('BuyBook', JSON.stringify(NewMassiv))
 

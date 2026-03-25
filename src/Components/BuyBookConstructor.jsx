@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import Books from "./BooksName"
 const BuyBookConstructor = (props) => {
         
         const [price,SetPrice] = useState(0)
         const Catalog = props.catalog
-        const NewMass = props.NewMass
         const RemoveCard = props.remove
         const count = props.count
         const newCount = props.NewCount
